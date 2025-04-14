@@ -1,97 +1,103 @@
-import React, { useState } from "react";
-import { 
-  FaHome, FaList, FaClock, FaCog, 
-  FaClipboard, FaSignOutAlt, FaBars, FaTimes 
-} from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { FaHome, FaList, FaClock, FaCog, FaSignOutAlt, FaBars, FaTimes } from "react-icons/fa";
 
-const Sidebar = ({ isProfileOpen }) => {
+const Sidebar = () => {
   const [active, setActive] = useState("home");
-  const [isOpen, setIsOpen] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  }
+  useEffect(() => {
+    if (showMobileMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [showMobileMenu]);
 
   return (
-    <div 
-      className={`backdrop-blur-lg bg-white/30 shadow-xl border border-white/20 ${
-        isOpen ? 'w-60' : 'w-20'
-      } h-screen flex flex-col items-center justify-between py-6 fixed rounded-r-3xl transition-all duration-500 ease-in-out z-50`}
-      style={{
-        background: 'rgba(255, 255, 255, 0.1)',
-        boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-        borderRadius: '20px',
-        backdropFilter: 'blur(10px)',
-        WebkitBackdropFilter: 'blur(10px)',
-        border: '1px solid rgba(255, 255, 255, 0.18)'
-      }}
-    >
-      
-      {/* Toggle Button */}
-      <div className="flex justify-center items-center w-full mb-4">
-        <button 
-          onClick={toggleSidebar}
-          className="text-gray-600 text-2xl p-2 rounded-full hover:bg-white transition-all"
-        >
-          {isOpen ? <FaTimes /> : <FaBars />}
+    <>
+      {/* Laptop Sidebar */}
+      <div className="hidden md:flex fixed top-0 left-0 h-screen w-48 flex-col items-center justify-between py-6 
+        bg-white shadow-lg border-r border-gray-200 rounded-r-3xl">
+        {/* Sidebar Menu */}
+        <div className="flex flex-col items-center gap-6 w-full mt-12">
+          {[
+            { name: "home", icon: FaHome },
+            { name: "tasks", icon: FaList },
+            { name: "history", icon: FaClock },
+            { name: "settings", icon: FaCog }
+          ].map((item) => (
+            <div
+              key={item.name}
+              onClick={() => setActive(item.name)}
+              className={`cursor-pointer flex items-center gap-4 w-10/12 p-2 rounded-xl transition-all duration-300 
+                ${active === item.name ? "bg-gray-100 shadow-md" : ""}`}
+            >
+              <item.icon className={`text-2xl ${active === item.name ? "text-blue-500" : "text-gray-500"}`} />
+              <p className="text-gray-600 font-medium">{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Logout */}
+        <div className="mb-6 flex justify-center">
+          <FaSignOutAlt className="text-2xl text-gray-500 cursor-pointer hover:text-red-500 transition-all duration-300" />
+        </div>
+      </div>
+
+      {/* Mobile Sidebar */}
+      <div className="md:hidden">
+        {/* Toggle Button */}
+        <button onClick={() => setShowMobileMenu(true)} className="fixed top-4 left-4 bg-gray-100 p-2 rounded-full shadow-lg z-50">
+          <FaBars className="text-xl text-gray-600" />
         </button>
-      </div>
 
-      {/* Sidebar Menu */}
-      <div className="flex flex-col items-center gap-6 w-full">
+        {/* Overlay */}
+        {showMobileMenu && (
+          <div 
+            className="fixed top-0 left-0 w-full h-full bg-white bg-opacity-30"
+            onClick={() => setShowMobileMenu(false)}
+          />
+        )}
 
-        {/* Home */}
-        <div 
-          onClick={() => setActive("home")} 
-          className={`cursor-pointer flex items-center gap-4 w-10/12 p-2 rounded-xl transition-all duration-300 ${
-            active === "home" ? "bg-white/50 shadow-lg" : ""
-          }`}
-        >
-          <FaHome className={`text-2xl ${active === "home" ? "text-blue-500" : "text-gray-500"}`} />
-          {isOpen && <p className="text-gray-600 font-medium">Home</p>}
-        </div>
+        {/* Sidebar */}
+        <div className={`fixed top-0 left-0 h-screen w-64 bg-white shadow-lg border-r border-gray-200 transform 
+          ${showMobileMenu ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 ease-in-out overflow-y-auto z-50`}>
+          
+          {/* Close Button */}
+          <button 
+            onClick={() => setShowMobileMenu(false)} 
+            className="absolute top-4 right-4 bg-gray-200 p-2 rounded-full shadow-md"
+          >
+            <FaTimes className="text-xl text-gray-600" />
+          </button>
 
-        {/* Tasks */}
-        <div 
-          onClick={() => setActive("tasks")} 
-          className={`cursor-pointer flex items-center gap-4 w-10/12 p-2 rounded-xl transition-all duration-300 ${
-            active === "tasks" ? "bg-white/50 shadow-lg" : ""
-          }`}
-        >
-          <FaList className={`text-2xl ${active === "tasks" ? "text-blue-500" : "text-gray-500"}`} />
-          {isOpen && <p className="text-gray-600 font-medium">Tasks</p>}
-        </div>
-
-        {/* History */}
-        <div 
-          onClick={() => setActive("history")} 
-          className={`cursor-pointer flex items-center gap-4 w-10/12 p-2 rounded-xl transition-all duration-300 ${
-            active === "history" ? "bg-white/50 shadow-lg" : ""
-          }`}
-        >
-          <FaClock className={`text-2xl ${active === "history" ? "text-blue-500" : "text-gray-500"}`} />
-          {isOpen && <p className="text-gray-600 font-medium">History</p>}
-        </div>
-
-        {/* Settings */}
-        <div 
-          onClick={() => setActive("settings")} 
-          className={`cursor-pointer flex items-center gap-4 w-10/12 p-2 rounded-xl transition-all duration-300 ${
-            active === "settings" ? "bg-white/50 shadow-lg" : ""
-          }`}
-        >
-          <FaCog className={`text-2xl ${active === "settings" ? "text-blue-500" : "text-gray-500"}`} />
-          {isOpen && <p className="text-gray-600 font-medium">Settings</p>}
+          <div className="flex flex-col items-center gap-6 w-full mt-16">
+            {[
+              { name: "home", icon: FaHome },
+              { name: "tasks", icon: FaList },
+              { name: "history", icon: FaClock },
+              { name: "settings", icon: FaCog }
+            ].map((item) => (
+              <div
+                key={item.name}
+                onClick={() => {
+                  setActive(item.name);
+                  setShowMobileMenu(false);
+                }}
+                className={`cursor-pointer flex items-center gap-4 w-10/12 p-2 rounded-xl transition-all duration-300 
+                  ${active === item.name ? "bg-gray-100 shadow-md" : ""}`}
+              >
+                <item.icon className={`text-2xl ${active === item.name ? "text-blue-500" : "text-gray-500"}`} />
+                <p className="text-gray-600 font-medium">{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-
-      {/* Logout */}
-      <div className="mb-6 flex justify-center">
-        <FaSignOutAlt 
-          className="text-2xl text-gray-500 cursor-pointer hover:text-red-500 transition-all duration-300"
-        />
-      </div>
-    </div>
+    </>
   );
 };
 

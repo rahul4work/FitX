@@ -3,11 +3,11 @@ import React from 'react'
 const Footer = () => {
     return (
         <div class="flex justify-center">
-            <div class="flex flex-col justify-between w-4/5 rounded-2xl bg-white text-gray-600 m-2 mb-4 p-10">
-                <div className="grid grid-cols-3 gap-5">
+            <div class="flex flex-col justify-between w-4/5 rounded-2xl bg-white text-gray-600 m-2 mb-4 p-6 md:p-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center md:text-left">
 
                     {/* About Section */}
-                    <div class="">
+                    <div>
                         <h2 className="text-xl font-semibold text-gray-800 mb-3">About FitX</h2>
                         <p className="text-sm text-gray-600">
                             FitX is a modern health & fitness tracker that helps you monitor
@@ -16,7 +16,7 @@ const Footer = () => {
                     </div>
 
                     {/* Quick Links */}
-                    <div class="pl-50">
+                    <div>
                         <h2 className="text-xl font-semibold text-gray-800 mb-3">Quick Links</h2>
                         <ul className="space-y-2">
                             <li><a href="#" className="text-sm text-gray-600 hover:text-blue-500 transition-all">Home</a></li>
@@ -27,9 +27,9 @@ const Footer = () => {
                     </div>
 
                     {/* Social Media */}
-                    <div class="flex flex-col pl-80">
+                    <div>
                         <h2 className="text-xl font-semibold text-gray-800 mb-3">Follow Us</h2>
-                        <div className="flex gap-4">
+                        <div className="flex justify-center md:justify-start gap-4">
                             <a href="#" className="text-gray-600 hover:text-blue-500 transition-all">
                                 <i className="fa-brands fa-facebook text-2xl"></i>
                             </a>

@@ -9,15 +9,15 @@ const data = [
 
 const Activitychart = () => {
     return (
-        <div class="flex justify-center">
-            <div class="flex flex-col justify-between w-4/5 rounded-2xl m-2 bg-white shadow-md p-4">
+        <div class="flex justify-center px-4">
+            <div class="flex flex-col w-full sm:w-4/5 rounded-2xl m-2 bg-white shadow-md p-3 md:p-4 lg:p-6">
                 <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-xl font-bold text-gray-800">My Activity</h2>
-                    <p className="text-sm text-gray-400 cursor-pointer">Last Week ▼</p>
+                    <h2 className="text-lg md:text-xl font-bold text-gray-800">My Activity</h2>
+                    <p className="text-xs md:text-sm text-gray-400 cursor-pointer hover:text-gray-600 transition">Last Week ▼</p>
                 </div>
 
                 {/* Chart */}
-                <ResponsiveContainer width="100%" height={300}>
+                <ResponsiveContainer width="100%" height={250}>
                     <LineChart data={data}>
                         <CartesianGrid strokeDasharray="3 3" vertical={false} />
                         <XAxis dataKey="name" tick={{ fill: "#999" }} />
