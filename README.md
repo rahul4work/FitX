@@ -1,7 +1,10 @@
 # 🏋️‍♂️ FitX - Fitness Made Simple
 
+## Project Overview
+
 FitX is a modern, responsive fitness web app built with **React.js**, featuring animated typing effects, clean UI, and interactive user profiles. Whether you're a beginner or a pro, FitX is your companion in tracking and staying motivated on your fitness journey.
 Currently it is only a frotnend website. But soon it's backend will be available.
+
 ---
 
 ## 🔥 Features
