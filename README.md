@@ -67,5 +67,5 @@ Feel free to open a pull request.
 ## 📬 Contact
 
 Rahul Kumar
-📧 heyyrj98@gmail.com
-🐙 GitHub
+📧 [heyyrj98@gmail.com](mailto:heyyrj98@gmail.com)  
+🐙 [GitHub: rahul4work](https://github.com/rahul4work)
