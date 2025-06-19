@@ -49,3 +49,20 @@ cd FitX
 npm install
 npm start
 ```
+
+--- 
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+Feel free to open a pull request.
+
+---
+
+
+## 📬 Contact
+
+Rahul Kumar
+📧 heyyrj98@gmail.com
+🐙 GitHub
