@@ -34,10 +34,9 @@ Currently it is only a frotnend website. But soon it's backend will be available
 
 ## 📱 Mobile Preview
 
-| ![Screenshot_20250619-160124 Brave](https://github.com/user-attachments/assets/41fbcd1c-1501-4437-b2d7-fcd2ff4cbc98) | ![Screenshot_20250619-160137 Brave](https://github.com/user-attachments/assets/f775a086-a399-4655-9625-eb13476daa19) | ![Screenshot_20250619-160154 Brave](https://github.com/user-attachments/assets/12464ff5-2c44-4940-a577-26f59637b5cd) |
-
-|----------------------------------------------|----------------------------------------------|----------------------------------------------|
-| ![Screenshot_20250619-160200 Brave](https://github.com/user-attachments/assets/027e1935-0b51-4b10-bd58-8aac6d0d391e) | ![Screenshot_20250619-160204 Brave](https://github.com/user-attachments/assets/902ff69a-1e3c-4975-8b8f-536d38dedd87) | ![Screenshot_20250619-160208 Brave](https://github.com/user-attachments/assets/27503d02-f780-4326-9bbc-e8801be7e244) |
+| ![Mobile 1](https://github.com/user-attachments/assets/41fbcd1c-1501-4437-b2d7-fcd2ff4cbc98) | ![Mobile 2](https://github.com/user-attachments/assets/f775a086-a399-4655-9625-eb13476daa19) | ![Mobile 3](https://github.com/user-attachments/assets/12464ff5-2c44-4940-a577-26f59637b5cd) |
+|:--:|:--:|:--:|
+| ![Mobile 4](https://github.com/user-attachments/assets/027e1935-0b51-4b10-bd58-8aac6d0d391e) | ![Mobile 5](https://github.com/user-attachments/assets/902ff69a-1e3c-4975-8b8f-536d38dedd87) | ![Mobile 6](https://github.com/user-attachments/assets/27503d02-f780-4326-9bbc-e8801be7e244) |
 
 
 ---
@@ -49,3 +48,4 @@ git clone https://github.com/yourusername/FitX.git
 cd FitX
 npm install
 npm start
+```
