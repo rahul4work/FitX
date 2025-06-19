@@ -67,5 +67,12 @@ Feel free to open a pull request.
 ## 📬 Contact
 
 Rahul Kumar
+
 📧 [heyyrj98@gmail.com](mailto:heyyrj98@gmail.com)  
 🐙 [GitHub: rahul4work](https://github.com/rahul4work)
+
+---
+
+
+## 🔗 Live Demo
+[Click here to view the site](https://fit-x-eta.vercel.app/)
