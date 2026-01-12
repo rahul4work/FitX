@@ -55,9 +55,21 @@ Step 3: Then, run the commands mentioned below:-
 
 ```bash
 git clone https://github.com/rahul4work/FitX.git
+```
+
+```bash
 cd FitX
+```
+
+```bash
 cd client
+```
+
+```bash
 npm install
+```
+
+```bash
 npm run dev
 ```
 
