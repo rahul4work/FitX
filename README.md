@@ -46,12 +46,12 @@ Currently it is only a frotnend website. But soon it's backend will be available
 
 ## 🛠️ Installation & Setup
 
-Open any folder in your VS Code 
+Open any folder in VS Code where you want to place your project on your local system
 
-Go to the terminal 
-(Use Ctrl+shift+backtick for shortcut [windows])
+Open the Terminal
+(Use Ctrl + Shift + backtik{`} as a shortcut on Windows)
 
-And then run these commands that are mentioned below
+Then, run the commands mentioned below
 
 ```bash
 git clone https://github.com/rahul4work/FitX.git
