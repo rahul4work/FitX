@@ -49,8 +49,9 @@ Currently it is only a frotnend website. But soon it's backend will be available
 ```bash
 git clone https://github.com/rahul4work/FitX.git
 cd FitX
+cd client
 npm install
-npm start
+npm run dev
 ```
 
 --- 
