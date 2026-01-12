@@ -46,6 +46,13 @@ Currently it is only a frotnend website. But soon it's backend will be available
 
 ## 🛠️ Installation & Setup
 
+Open any folder in your VS Code 
+
+Go to the terminal 
+(Use Ctrl+shift+backtick for shortcut [windows])
+
+And then run these commands that are mentioned below
+
 ```bash
 git clone https://github.com/rahul4work/FitX.git
 cd FitX
