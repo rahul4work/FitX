@@ -47,7 +47,7 @@ Currently it is only a frotnend website. But soon it's backend will be available
 ## 🛠️ Installation & Setup
 
 ```bash
-git clone https://github.com/yourusername/FitX.git
+git clone https://github.com/rahul4work/FitX.git
 cd FitX
 npm install
 npm start
